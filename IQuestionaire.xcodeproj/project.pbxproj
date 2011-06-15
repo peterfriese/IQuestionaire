@@ -1,0 +1,227 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		88130F2313A8A32E000CBFBC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88130F2213A8A32E000CBFBC /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		88130F1F13A8A32E000CBFBC /* libIQuestionaire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIQuestionaire.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		88130F2213A8A32E000CBFBC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		88130F2613A8A32E000CBFBC /* IQuestionaire-Prefix.pch */ = {isa = PBXFileReference; path = "IQuestionaire-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		88130F1C13A8A32E000CBFBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88130F2313A8A32E000CBFBC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		88130F1413A8A32D000CBFBC = {
+			isa = PBXGroup;
+			children = (
+				88130F2413A8A32E000CBFBC /* IQuestionaire */,
+				88130F2113A8A32E000CBFBC /* Frameworks */,
+				88130F2013A8A32E000CBFBC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		88130F2013A8A32E000CBFBC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88130F1F13A8A32E000CBFBC /* libIQuestionaire.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88130F2113A8A32E000CBFBC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88130F2213A8A32E000CBFBC /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		88130F2413A8A32E000CBFBC /* IQuestionaire */ = {
+			isa = PBXGroup;
+			children = (
+				88130F2513A8A32E000CBFBC /* Supporting Files */,
+			);
+			path = IQuestionaire;
+			sourceTree = "<group>";
+		};
+		88130F2513A8A32E000CBFBC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				88130F2613A8A32E000CBFBC /* IQuestionaire-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		88130F1D13A8A32E000CBFBC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		88130F1E13A8A32E000CBFBC /* IQuestionaire */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88130F2913A8A32E000CBFBC /* Build configuration list for PBXNativeTarget "IQuestionaire" */;
+			buildPhases = (
+				88130F1B13A8A32E000CBFBC /* Sources */,
+				88130F1C13A8A32E000CBFBC /* Frameworks */,
+				88130F1D13A8A32E000CBFBC /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IQuestionaire;
+			productName = IQuestionaire;
+			productReference = 88130F1F13A8A32E000CBFBC /* libIQuestionaire.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		88130F1613A8A32D000CBFBC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = itemis;
+			};
+			buildConfigurationList = 88130F1913A8A32D000CBFBC /* Build configuration list for PBXProject "IQuestionaire" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 88130F1413A8A32D000CBFBC;
+			productRefGroup = 88130F2013A8A32E000CBFBC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				88130F1E13A8A32E000CBFBC /* IQuestionaire */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		88130F1B13A8A32E000CBFBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		88130F2713A8A32E000CBFBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		88130F2813A8A32E000CBFBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		88130F2A13A8A32E000CBFBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/IQuestionaire.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IQuestionaire/IQuestionaire-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		88130F2B13A8A32E000CBFBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/IQuestionaire.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IQuestionaire/IQuestionaire-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		88130F1913A8A32D000CBFBC /* Build configuration list for PBXProject "IQuestionaire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88130F2713A8A32E000CBFBC /* Debug */,
+				88130F2813A8A32E000CBFBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88130F2913A8A32E000CBFBC /* Build configuration list for PBXNativeTarget "IQuestionaire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88130F2A13A8A32E000CBFBC /* Debug */,
+				88130F2B13A8A32E000CBFBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 88130F1613A8A32D000CBFBC /* Project object */;
+}
