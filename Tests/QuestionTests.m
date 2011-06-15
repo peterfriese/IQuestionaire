@@ -3,7 +3,7 @@
 //  IQuestionaire
 //
 //  Created by Peter Friese on 15.06.11.
-//  Copyright 2011 itemis. All rights reserved.
+//  Copyright 2011 Peter Friese. All rights reserved.
 //
 
 #import <SenTestingKit/SenTestingKit.h>

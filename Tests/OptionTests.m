@@ -11,12 +11,12 @@
 
 #import "Option.h"
 
-@interface OptionTest : SenTestCase
+@interface OptionTests : SenTestCase
 {
 }
 @end
 
-@implementation OptionTest
+@implementation OptionTests
 
 - (void)testSimpleOption {
     Option *option = [[Option alloc] init];

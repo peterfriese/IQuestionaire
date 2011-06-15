@@ -16,8 +16,7 @@
 @synthesize nextQuestion;
 @synthesize options;
 
-- (id)init
-{
+- (id)init {
     self = [super init];
     if (self) {
         // Initialization code here.
