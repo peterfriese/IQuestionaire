@@ -30,6 +30,7 @@
 		88B7AA3713A8F74A001EAA21 /* Questionaire.h in Headers */ = {isa = PBXBuildFile; fileRef = 88B7AA3513A8F74A001EAA21 /* Questionaire.h */; };
 		88B7AA3813A8F74A001EAA21 /* Questionaire.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B7AA3613A8F74A001EAA21 /* Questionaire.m */; };
 		88B7AA3913A8F74A001EAA21 /* Questionaire.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B7AA3613A8F74A001EAA21 /* Questionaire.m */; };
+		88B7AA3C13A8F9AC001EAA21 /* QuestionaireTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B7AA3B13A8F9AC001EAA21 /* QuestionaireTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		88B7AA3113A8F71E001EAA21 /* Page.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Page.m; sourceTree = "<group>"; };
 		88B7AA3513A8F74A001EAA21 /* Questionaire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Questionaire.h; sourceTree = "<group>"; };
 		88B7AA3613A8F74A001EAA21 /* Questionaire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Questionaire.m; sourceTree = "<group>"; };
+		88B7AA3B13A8F9AC001EAA21 /* QuestionaireTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionaireTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				883D469513A8D51E0095FFB8 /* Supporting Files */,
 				883D46A813A8D7BF0095FFB8 /* OptionTests.m */,
 				88B7AA2413A8DFE5001EAA21 /* QuestionTests.m */,
+				88B7AA3B13A8F9AC001EAA21 /* QuestionaireTests.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				88B7AA2F13A8E430001EAA21 /* MultipleChoiceQuestion.m in Sources */,
 				88B7AA3413A8F71E001EAA21 /* Page.m in Sources */,
 				88B7AA3913A8F74A001EAA21 /* Questionaire.m in Sources */,
+				88B7AA3C13A8F9AC001EAA21 /* QuestionaireTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

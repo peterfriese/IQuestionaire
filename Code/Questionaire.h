@@ -11,5 +11,6 @@
 @interface Questionaire : NSObject
 
 @property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSArray *pages;
 
 @end

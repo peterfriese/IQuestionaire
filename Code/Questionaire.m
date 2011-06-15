@@ -11,6 +11,7 @@
 @implementation Questionaire
 
 @synthesize title;
+@synthesize pages;
 
 - (id)init {
     self = [super init];

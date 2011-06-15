@@ -11,5 +11,6 @@
 @interface Page : NSObject
 
 @property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSArray *questions;
 
 @end

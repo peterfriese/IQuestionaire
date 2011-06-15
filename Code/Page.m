@@ -11,6 +11,7 @@
 @implementation Page
 
 @synthesize title;
+@synthesize questions;
 
 - (id)init {
     self = [super init];
