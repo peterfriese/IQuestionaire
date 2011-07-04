@@ -24,7 +24,7 @@
 }
 
 -(void)dealloc {
-    [self.page release];
+    [_page release];
     [super dealloc];
 }
 
@@ -110,7 +110,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
     // Configure the cell...
@@ -121,7 +121,6 @@
 	NSLog(@"Option: %@", [option title]);
     
     cell.textLabel.text = [NSString stringWithFormat:@"[%@]", option.title];
-	
     return cell;
 }
 
