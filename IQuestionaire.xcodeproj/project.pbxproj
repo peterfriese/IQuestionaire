@@ -17,6 +17,10 @@
 		883D46A513A8D5D60095FFB8 /* Option.m in Sources */ = {isa = PBXBuildFile; fileRef = 883D46A313A8D5D60095FFB8 /* Option.m */; };
 		883D46A613A8D5D60095FFB8 /* Option.m in Sources */ = {isa = PBXBuildFile; fileRef = 883D46A313A8D5D60095FFB8 /* Option.m */; };
 		883D46A913A8D7BF0095FFB8 /* OptionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 883D46A813A8D7BF0095FFB8 /* OptionTests.m */; };
+		88AC521213C1C8C200221B07 /* PageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88AC521113C1C8C200221B07 /* PageTests.m */; };
+		88AC521513C1CF7B00221B07 /* SingleChoiceQuestion.h in Headers */ = {isa = PBXBuildFile; fileRef = 88AC521313C1CF7A00221B07 /* SingleChoiceQuestion.h */; };
+		88AC521613C1CF7B00221B07 /* SingleChoiceQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 88AC521413C1CF7B00221B07 /* SingleChoiceQuestion.m */; };
+		88AC521713C1CF7B00221B07 /* SingleChoiceQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 88AC521413C1CF7B00221B07 /* SingleChoiceQuestion.m */; };
 		88B7AA2013A8DE9D001EAA21 /* Question.h in Headers */ = {isa = PBXBuildFile; fileRef = 88B7AA1E13A8DE9D001EAA21 /* Question.h */; };
 		88B7AA2113A8DE9D001EAA21 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B7AA1F13A8DE9D001EAA21 /* Question.m */; };
 		88B7AA2213A8DE9D001EAA21 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B7AA1F13A8DE9D001EAA21 /* Question.m */; };
@@ -33,6 +37,16 @@
 		88B7AA3C13A8F9AC001EAA21 /* QuestionaireTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B7AA3B13A8F9AC001EAA21 /* QuestionaireTests.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		88AC520E13C1C5E000221B07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88130F1613A8A32D000CBFBC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 883D468B13A8D51E0095FFB8;
+			remoteInfo = Tests;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		88130F1F13A8A32E000CBFBC /* libIQuestionaire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIQuestionaire.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		88130F2213A8A32E000CBFBC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -46,6 +60,9 @@
 		883D46A213A8D5D60095FFB8 /* Option.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Option.h; sourceTree = "<group>"; };
 		883D46A313A8D5D60095FFB8 /* Option.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Option.m; sourceTree = "<group>"; };
 		883D46A813A8D7BF0095FFB8 /* OptionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionTests.m; sourceTree = "<group>"; };
+		88AC521113C1C8C200221B07 /* PageTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageTests.m; sourceTree = "<group>"; };
+		88AC521313C1CF7A00221B07 /* SingleChoiceQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleChoiceQuestion.h; sourceTree = "<group>"; };
+		88AC521413C1CF7B00221B07 /* SingleChoiceQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleChoiceQuestion.m; sourceTree = "<group>"; };
 		88B7AA1E13A8DE9D001EAA21 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
 		88B7AA1F13A8DE9D001EAA21 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 		88B7AA2413A8DFE5001EAA21 /* QuestionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionTests.m; sourceTree = "<group>"; };
@@ -120,6 +137,8 @@
 				88B7AA3113A8F71E001EAA21 /* Page.m */,
 				88B7AA1E13A8DE9D001EAA21 /* Question.h */,
 				88B7AA1F13A8DE9D001EAA21 /* Question.m */,
+				88AC521313C1CF7A00221B07 /* SingleChoiceQuestion.h */,
+				88AC521413C1CF7B00221B07 /* SingleChoiceQuestion.m */,
 				88B7AA2B13A8E430001EAA21 /* MultipleChoiceQuestion.h */,
 				88B7AA2C13A8E430001EAA21 /* MultipleChoiceQuestion.m */,
 				883D46A213A8D5D60095FFB8 /* Option.h */,
@@ -134,6 +153,7 @@
 				883D469513A8D51E0095FFB8 /* Supporting Files */,
 				883D46A813A8D7BF0095FFB8 /* OptionTests.m */,
 				88B7AA2413A8DFE5001EAA21 /* QuestionTests.m */,
+				88AC521113C1C8C200221B07 /* PageTests.m */,
 				88B7AA3B13A8F9AC001EAA21 /* QuestionaireTests.m */,
 			);
 			path = Tests;
@@ -161,6 +181,7 @@
 				88B7AA2D13A8E430001EAA21 /* MultipleChoiceQuestion.h in Headers */,
 				88B7AA3213A8F71E001EAA21 /* Page.h in Headers */,
 				88B7AA3713A8F74A001EAA21 /* Questionaire.h in Headers */,
+				88AC521513C1CF7B00221B07 /* SingleChoiceQuestion.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +199,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				88AC520F13C1C5E000221B07 /* PBXTargetDependency */,
 			);
 			name = IQuestionaire;
 			productName = IQuestionaire;
@@ -265,6 +287,7 @@
 				88B7AA2E13A8E430001EAA21 /* MultipleChoiceQuestion.m in Sources */,
 				88B7AA3313A8F71E001EAA21 /* Page.m in Sources */,
 				88B7AA3813A8F74A001EAA21 /* Questionaire.m in Sources */,
+				88AC521613C1CF7B00221B07 /* SingleChoiceQuestion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,10 +303,20 @@
 				88B7AA3413A8F71E001EAA21 /* Page.m in Sources */,
 				88B7AA3913A8F74A001EAA21 /* Questionaire.m in Sources */,
 				88B7AA3C13A8F9AC001EAA21 /* QuestionaireTests.m in Sources */,
+				88AC521213C1C8C200221B07 /* PageTests.m in Sources */,
+				88AC521713C1CF7B00221B07 /* SingleChoiceQuestion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		88AC520F13C1C5E000221B07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 883D468B13A8D51E0095FFB8 /* Tests */;
+			targetProxy = 88AC520E13C1C5E000221B07 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		883D469713A8D51E0095FFB8 /* InfoPlist.strings */ = {
