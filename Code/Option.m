@@ -11,6 +11,7 @@
 @implementation Option
 
 @synthesize key;
+@synthesize title;
 @synthesize data;
 @synthesize checked;
 

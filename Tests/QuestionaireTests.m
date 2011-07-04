@@ -63,6 +63,8 @@
     [question3 setOptions:[NSArray arrayWithObjects:optionCupholder, optionBoardComputer, nil]];
 
     [page2 setQuestions:[NSArray arrayWithObjects:question2, question3, nil]];
+    
+
 }
 
 @end

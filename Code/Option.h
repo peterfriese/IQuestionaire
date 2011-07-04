@@ -11,6 +11,7 @@
 @interface Option : NSObject
 
 @property (nonatomic, retain) NSString *key;
+@property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) id data;
 @property (nonatomic) BOOL checked;
 
