@@ -7,6 +7,7 @@
 //
 
 #import "Questionaire.h"
+#import "Page.h"
 
 @implementation Questionaire
 
@@ -20,6 +21,15 @@
     }
     
     return self;
+}
+
+- (BOOL)valid {
+    for (Page *page in pages) {
+        if (![page valid]) {
+            return NO;
+        }
+    }
+    return true;
 }
 
 @end

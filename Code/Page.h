@@ -13,4 +13,6 @@
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSArray *questions;
 
+- (BOOL)valid;
+
 @end

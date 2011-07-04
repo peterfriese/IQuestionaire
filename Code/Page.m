@@ -22,4 +22,9 @@
     return self;
 }
 
+- (BOOL)valid {
+    NSArray *inValidQuestions = [questions filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"valid == NO"]];
+    return ([inValidQuestions count] == 0);
+}
+
 @end
