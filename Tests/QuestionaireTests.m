@@ -12,6 +12,7 @@
 #import "Questionaire.h"
 #import "Page.h"
 #import "Question.h"
+#import "SingleChoiceQuestion.h"
 #import "MultipleChoiceQuestion.h"
 #import "Option.h"
 
@@ -27,7 +28,7 @@
     Page *page2 = [[Page alloc] init];
     [questionaire setPages:[NSArray arrayWithObjects:page1, page2, nil]];
     
-    Question *question1 = [[Question alloc] init];
+    SingleChoiceQuestion *question1 = [[SingleChoiceQuestion alloc] init];
     [question1 setKey:@"color"];
     [question1 setTitle:@"Color"];
     [question1 setSubtitle:@"Which color do you like?"];
@@ -40,7 +41,7 @@
     [question1 setOptions:[NSArray arrayWithObjects:optionBlue, optionRed, nil]];
     [page1 setQuestions:[NSArray arrayWithObjects:question1, nil]];
     
-    Question *question2 = [[Question alloc] init];
+    MultipleChoiceQuestion *question2 = [[MultipleChoiceQuestion alloc] init];
     [question2 setKey:@"aircondition"];
     [question2 setTitle:@"Air condition"];
     [question2 setSubtitle:@"Choose the kind of air condition"];
@@ -51,7 +52,7 @@
     [optionAutomaticAirCondition setKey:@"automaticairco"];
     [question2 setOptions:[NSArray arrayWithObjects:optionNoAirCondition, optionAutomaticAirCondition, nil]];
     
-    Question *question3 = [[Question alloc] init];
+    MultipleChoiceQuestion *question3 = [[MultipleChoiceQuestion alloc] init];
     [question3 setKey:@"interior"];
     [question3 setTitle:@"Interior"];
     Option *optionCupholder = [[Option alloc] init];
@@ -64,6 +65,9 @@
 
     [page2 setQuestions:[NSArray arrayWithObjects:question2, question3, nil]];
     
+    STAssertFalse([questionaire valid], nil);
+    [optionBlue setChecked:YES];
+    STAssertTrue([questionaire valid], nil);
 
 }
 
