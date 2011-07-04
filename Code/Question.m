@@ -16,15 +16,6 @@
 @synthesize nextQuestion;
 @synthesize options;
 
-- (id)init {
-    self = [super init];
-    if (self) {
-        // Initialization code here.
-    }
-    
-    return self;
-}
-
 - (BOOL)valid {
     return YES;
 }

@@ -13,15 +13,6 @@
 @synthesize title;
 @synthesize questions;
 
-- (id)init {
-    self = [super init];
-    if (self) {
-        // Initialization code here.
-    }
-    
-    return self;
-}
-
 - (BOOL)valid {
     NSArray *inValidQuestions = [questions filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"valid == NO"]];
     return ([inValidQuestions count] == 0);
