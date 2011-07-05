@@ -16,7 +16,8 @@
 @synthesize nextQuestion;
 @synthesize options;
 
-- (BOOL)valid {
+- (BOOL)valid 
+{
     return YES;
 }
 

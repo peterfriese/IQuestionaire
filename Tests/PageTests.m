@@ -61,11 +61,39 @@
     [o22 setChecked:NO];
     [q2 setOptions:[NSArray arrayWithObjects:o21, o22, nil]];
     
+    //TODO: add q2!
     [page setQuestions:[NSArray arrayWithObjects:q, nil]];
     STAssertFalse([q valid], nil);
     STAssertFalse([page valid], nil);
     [o1 setChecked:YES];
     STAssertTrue([page valid], nil);
+}
+
+- (void)testGetNextQuestionOnPageWithSeveralQuestions {
+    Page *page = [[Page alloc] init];
+    
+    SingleChoiceQuestion *q = [[SingleChoiceQuestion alloc] init];
+    [q setKey:@"singlechoice"];
+    [q setTitle:@"Choose either one"];
+    Option *o1 = [[Option alloc] init];
+    [o1 setKey:@"one"];
+    [o1 setTitle:@"One"];
+    Option *o2 = [[Option alloc] init];
+    [o2 setKey:@"two"];
+    [o2 setTitle:@"Two"];
+    [q setOptions:[NSArray arrayWithObjects:o1, o2, nil]];
+    
+    MultipleChoiceQuestion *q2 = [[MultipleChoiceQuestion alloc] init];
+    Option *o21 = [[Option alloc] init];
+    [o21 setChecked:NO];
+    Option *o22 = [[Option alloc] init];
+    [o22 setChecked:NO];
+    [q2 setOptions:[NSArray arrayWithObjects:o21, o22, nil]];
+    
+    [page setQuestions:[NSArray arrayWithObjects:q, q2, nil]];
+    
+    Question *nextQ = [page nextQuestion:q];
+    STAssertEquals(q2, nextQ, nil);
 }
 
 @end

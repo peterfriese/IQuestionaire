@@ -13,9 +13,21 @@
 @synthesize title;
 @synthesize questions;
 
-- (BOOL)valid {
+- (BOOL)valid 
+{
     NSArray *inValidQuestions = [questions filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"valid == NO"]];
     return ([inValidQuestions count] == 0);
+}
+
+- (Question *)nextQuestion:(Question *)question
+{
+    NSLog(@"Number of qs: %d", [questions count]);
+    NSUInteger index = [questions indexOfObject:question];
+    if (index < ([questions count] - 1))
+    {
+        return [questions objectAtIndex:index + 1];
+    }
+    return nil;
 }
 
 @end
