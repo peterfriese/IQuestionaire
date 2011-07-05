@@ -3,7 +3,7 @@
 //  SampleQuestionaire
 //
 //  Created by Peter Friese on 04.07.11.
-//  Copyright 2011 itemis. All rights reserved.
+//  Copyright 2011 Peter Friese. All rights reserved.
 //
 
 #import "PageOneViewController.h"
@@ -114,13 +114,11 @@
     }
     
     // Configure the cell...
-
     Question *question = [self.page.questions objectAtIndex:[indexPath section]];
-	NSLog(@"Question: %@", [question title]);
     Option *option = [question.options objectAtIndex:[indexPath row]];
-	NSLog(@"Option: %@", [option title]);
     
-    cell.textLabel.text = [NSString stringWithFormat:@"[%@]", option.title];
+    cell.textLabel.text = option.title;
+    cell.accessoryType = [option checked] ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
     return cell;
 }
 
@@ -128,14 +126,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    Question *question = [self.page.questions objectAtIndex:[indexPath section]];
+    Option *option = [question.options objectAtIndex:[indexPath row]];
+    option.checked = !option.checked;
+    
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];    
+    cell.accessoryType = [option checked] ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
 }
+
+#pragma mark - View Model Handling
 
 @end
