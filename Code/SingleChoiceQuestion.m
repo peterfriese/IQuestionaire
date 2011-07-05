@@ -10,19 +10,20 @@
 
 @implementation SingleChoiceQuestion
 
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        // Initialization code here.
-    }
-    
-    return self;
-}
-
 - (BOOL)valid {
     NSArray *checkedOptions = [[self options] filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"checked == YES"]];
     return [checkedOptions count] == 1;
 }
+
+- (BOOL)toggleOption:(Option *)option
+{
+    for (Option *o in self.options) {
+        if( (o != option) && (option.checked == NO) ) {
+            o.checked = option.checked;
+        }
+    }
+    return [super toggleOption:option];
+}
+
 
 @end

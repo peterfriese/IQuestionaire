@@ -83,4 +83,74 @@
     STAssertTrue([q valid], nil);
 }
 
+- (void)testToggleOptionOnSimpleQuestion {
+    Question *q = [[Question alloc] init];
+    Option *o1 = [[Option alloc] init];
+    [o1 setKey:@"option1"];
+    [o1 setChecked:NO];
+    Option *o2 = [[Option alloc] init];
+    [o2 setKey:@"option2"];
+    [o2 setChecked:NO];
+    [q setOptions:[NSArray arrayWithObjects:o1, o2, nil]];
+    STAssertEquals((NSUInteger) 2, [[q options] count], nil);
+    
+    STAssertFalse([o1 checked], nil);
+    STAssertFalse([o2 checked], nil);
+    
+    [q toggleOption:o1];
+    STAssertTrue([o1 checked], nil);
+    
+    [q toggleOption:o1];
+    STAssertFalse([o1 checked], nil);
+    
+    [q toggleOption:o1];
+    [q toggleOption:o2];
+    STAssertTrue([o1 checked], nil);
+    STAssertTrue([o2 checked], nil);
+}
+
+- (void)testToggleOptionOnSingleChoiceQuestion {
+    SingleChoiceQuestion *q = [[SingleChoiceQuestion alloc] init];
+    Option *o1 = [[Option alloc] init];
+    [o1 setKey:@"option1"];
+    [o1 setChecked:NO];
+    Option *o2 = [[Option alloc] init];
+    [o2 setKey:@"option2"];
+    [o2 setChecked:NO];
+    Option *o3 = [[Option alloc] init];
+    [o3 setKey:@"option3"];
+    [o3 setChecked:NO];
+    [q setOptions:[NSArray arrayWithObjects:o1, o2, o3, nil]];    
+    STAssertEquals((NSUInteger) 3, [[q options] count], nil);
+    
+    STAssertFalse([o1 checked], nil);
+    STAssertFalse([o2 checked], nil);
+    STAssertFalse([o3 checked], nil);
+    
+    [q toggleOption:o1];
+    STAssertTrue([o1 checked], nil);
+    STAssertFalse([o2 checked], nil);
+    STAssertFalse([o3 checked], nil);
+    
+    [q toggleOption:o2];
+    STAssertFalse([o1 checked], nil);
+    STAssertTrue([o2 checked], nil); 
+    STAssertFalse([o3 checked], nil);
+    
+    [q toggleOption:o2];
+    STAssertFalse([o1 checked], nil);
+    STAssertFalse([o2 checked], nil);
+    STAssertFalse([o3 checked], nil);
+    
+    [q toggleOption:o1];
+    STAssertTrue([o1 checked], nil);
+    STAssertFalse([o2 checked], nil);
+    STAssertFalse([o3 checked], nil);    
+    
+    [q toggleOption:o3];
+    STAssertFalse([o1 checked], nil);
+    STAssertFalse([o2 checked], nil);
+    STAssertTrue([o3 checked], nil);    
+}
+
 @end

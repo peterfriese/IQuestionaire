@@ -20,4 +20,10 @@
     return YES;
 }
 
+- (BOOL)toggleOption:(Option *)option
+{
+    option.checked = !option.checked;
+    return option.checked;
+}
+
 @end

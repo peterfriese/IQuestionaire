@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Option.h"
 
 @interface Question : NSObject
 
@@ -17,5 +18,6 @@
 @property (nonatomic, retain) NSArray *options;
 
 - (BOOL) valid;
+- (BOOL)toggleOption:(Option *)option;
 
 @end
