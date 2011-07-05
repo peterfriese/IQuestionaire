@@ -9,6 +9,9 @@
 #import "PageOneViewController.h"
 #import "Page.h"
 #import "Question.h"
+#import "SingleChoiceQuestion.h"
+#import "MultipleChoiceQuestion.h"
+#import "DrillDownQuestion.h"
 #import "Option.h"
 
 @implementation PageOneViewController
@@ -98,8 +101,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    Question *question = [self.page.questions objectAtIndex:section];
-	NSLog(@"Question: %@", [question title]);
+    Question *question = [self questionForSection:section];
 	NSUInteger result = [question.options count];
     return result;
 }
@@ -114,8 +116,7 @@
     }
     
     // Configure the cell...
-    Question *question = [self.page.questions objectAtIndex:[indexPath section]];
-    Option *option = [question.options objectAtIndex:[indexPath row]];
+    Option *option = [self optionForRowAtIndexPath:indexPath];
     
     cell.textLabel.text = option.title;
     cell.accessoryType = [option checked] ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
@@ -128,8 +129,31 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    Question *question = [self.page.questions objectAtIndex:[indexPath section]];
-    Option *option = [question.options objectAtIndex:[indexPath row]];
+    // depending on the type of question, we need to do one of the following:
+    // SingleChoiceQuestion: 
+    //  Check the currently selected cell and deselect any other cell that has been selected before. 
+    //  Also, change the model. Actually, it's probably best to just change the model and then derive the UI state from it :-)
+    // MultipleChoiceQuestion:
+    //  Check the currently selected cell and update the model accordingly.
+    // DrillDownQuestion:
+    //  Check the model element and navigate to the next page
+    Question *question = [self questionForRowAtIndexPath:indexPath];
+    if ([question isKindOfClass:[SingleChoiceQuestion class]]) {
+        // ask question to change checked state of option
+    }
+    else if ([question isKindOfClass:[MultipleChoiceQuestion class]]) {
+        // ask question of option can be checked
+        // no: issue message dialog ("you may only select N options")
+        // yes: ask question to check option
+    }
+    else if ([question isKindOfClass:[DrillDownQuestion class]]) {
+        // ask question to check option
+        // ask question for next question
+        // ask next question for next page
+        // navigate to next page
+    }
+    
+    Option *option = [self optionForRowAtIndexPath:indexPath];
     option.checked = !option.checked;
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];    
@@ -137,5 +161,20 @@
 }
 
 #pragma mark - View Model Handling
+
+- (Question *)questionForSection:(NSUInteger)section
+{
+    return [self.page.questions objectAtIndex:section];
+}
+
+- (Question *)questionForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [self.page.questions objectAtIndex:[indexPath section]];
+}
+
+- (Option *)optionForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [[[self questionForRowAtIndexPath:indexPath] options] objectAtIndex:[indexPath row]];
+}
 
 @end

@@ -8,11 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "Page.h"
+#import "Question.h"
+#import "Option.h"
 
 @interface PageOneViewController : UITableViewController
 
 @property (nonatomic, retain) Page *page;
 
--(id)initWithPage:(Page *)page;
+- (id)initWithPage:(Page *)page;
+- (Question *)questionForSection:(NSUInteger)section;
+- (Question *)questionForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (Option *)optionForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
