@@ -17,7 +17,8 @@
 @property (nonatomic, retain) Question *nextQuestion;
 @property (nonatomic, retain) NSArray *options;
 
-- (BOOL) valid;
+- (NSArray *)checkedOptions;
+- (BOOL)valid;
 - (BOOL)toggleOption:(Option *)option;
 
 @end

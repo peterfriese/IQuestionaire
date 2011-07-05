@@ -25,8 +25,19 @@
 }
 
 - (BOOL) valid {
-    NSUInteger numSelected = ([[self.options filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"checked == YES"]] count]);
+    NSUInteger numSelected = [[self checkedOptions] count];
     return (self.minimumSelectionCount <= numSelected) && (numSelected <= self.maximumSelectionCount);
+}
+
+- (BOOL)toggleOption:(Option *)option
+{
+    NSUInteger count = [[self checkedOptions] count];
+    count += option.checked ? 1 : -1;
+    if (count <= self.maximumSelectionCount) {
+        return [super toggleOption:option];
+    }
+    // TODO: maybe better throw an exception
+    return NO;
 }
 
 @end

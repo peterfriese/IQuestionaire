@@ -20,6 +20,11 @@
     return YES;
 }
 
+- (NSArray *)checkedOptions
+{
+    return [self.options filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"checked == YES"]];
+}
+
 - (BOOL)toggleOption:(Option *)option
 {
     option.checked = !option.checked;

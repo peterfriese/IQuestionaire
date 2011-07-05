@@ -138,13 +138,16 @@
     // DrillDownQuestion:
     //  Check the model element and navigate to the next page
     Question *question = [self questionForRowAtIndexPath:indexPath];
+    Option *option = [self optionForRowAtIndexPath:indexPath];    
     if ([question isKindOfClass:[SingleChoiceQuestion class]]) {
         // ask question to change checked state of option
+        [question toggleOption:option];
     }
     else if ([question isKindOfClass:[MultipleChoiceQuestion class]]) {
         // ask question of option can be checked
         // no: issue message dialog ("you may only select N options")
         // yes: ask question to check option
+        [question toggleOption:option];
     }
     else if ([question isKindOfClass:[DrillDownQuestion class]]) {
         // ask question to check option
@@ -152,12 +155,13 @@
         // ask next question for next page
         // navigate to next page
     }
-    
-    Option *option = [self optionForRowAtIndexPath:indexPath];
-    option.checked = !option.checked;
-    
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];    
-    cell.accessoryType = [option checked] ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+
+    // check / uncheck all visible cells
+    for (UITableViewCell *cell in [tableView visibleCells]) {
+        NSIndexPath *path = [tableView indexPathForCell:cell];
+        Option *option = [self optionForRowAtIndexPath:path];
+        cell.accessoryType = [option checked] ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;        
+    }
 }
 
 #pragma mark - View Model Handling

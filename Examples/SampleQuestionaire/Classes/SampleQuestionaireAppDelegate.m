@@ -26,7 +26,7 @@
     // Override point for customization after application launch.
     Page *page1 = [[Page alloc] init];
 	
-    Question *question1 = [[Question alloc] init];
+    SingleChoiceQuestion *question1 = [[SingleChoiceQuestion alloc] init];
     [question1 setKey:@"color"];
     [question1 setTitle:@"Color"];
     [question1 setSubtitle:@"Which color do you like?"];
@@ -38,9 +38,30 @@
     [optionBlue setKey:@"blue"];
     [optionBlue setData:@"Blue"];
 	[optionBlue setTitle:@"Blue"];
-    [question1 setOptions:[NSArray arrayWithObjects:optionBlue, optionRed, nil]];
+    Option *optionGreen = [[Option alloc] init];
+    [optionGreen setKey:@"green"];
+    [optionGreen setData:@"Green"];
+	[optionGreen setTitle:@"Green"];
+    Option *optionMagenta = [[Option alloc] init];
+    [optionMagenta setKey:@"magenta"];
+    [optionMagenta setData:@"Magenta"];
+	[optionMagenta setTitle:@"Magenta"];
+    Option *optionFuchsia = [[Option alloc] init];
+    [optionFuchsia setKey:@"fuchsia"];
+    [optionFuchsia setData:@"Fuchsia"];
+	[optionFuchsia setTitle:@"Fuchsia"];
+    Option *optionGray = [[Option alloc] init];
+    [optionGray setKey:@"gray"];
+    [optionGray setData:@"Gray"];
+	[optionGray setTitle:@"Gray"];
+    Option *optionBlack = [[Option alloc] init];
+    [optionBlack setKey:@"black"];
+    [optionBlack setData:@"Black"];
+	[optionBlack setTitle:@"Black"];
     
-    MultipleChoiceQuestion *question2 = [[MultipleChoiceQuestion alloc] init];
+    [question1 setOptions:[NSArray arrayWithObjects:optionBlue, optionRed, optionGreen, optionMagenta, optionFuchsia, optionGray, optionBlack, nil]];
+    
+    SingleChoiceQuestion *question2 = [[SingleChoiceQuestion alloc] init];
     [question2 setKey:@"aircondition"];
     [question2 setTitle:@"Air condition"];
     [question2 setSubtitle:@"Choose the kind of air condition"];

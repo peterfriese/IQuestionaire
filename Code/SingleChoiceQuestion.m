@@ -25,5 +25,4 @@
     return [super toggleOption:option];
 }
 
-
 @end
