@@ -6,7 +6,7 @@
 //  Copyright 2011 Peter Friese. All rights reserved.
 //
 
-#import "PageOneViewController.h"
+#import "PageViewController.h"
 #import "Page.h"
 #import "Question.h"
 #import "SingleChoiceQuestion.h"
@@ -14,7 +14,7 @@
 #import "DrillDownQuestion.h"
 #import "Option.h"
 
-@implementation PageOneViewController
+@implementation PageViewController
 
 @synthesize page = _page;
 
@@ -22,6 +22,7 @@
     self = [super initWithStyle:UITableViewStylePlain];
     if (self) {
         [self setPage:page];
+        [self setTitle:page.title];
     }
     return self;
 }

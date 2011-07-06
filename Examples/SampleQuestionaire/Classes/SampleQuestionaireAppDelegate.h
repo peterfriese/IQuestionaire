@@ -7,14 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PageOneViewController.h"
+#import "PageViewController.h"
+#import "QuestionaireController.h"
 
 @interface SampleQuestionaireAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) PageOneViewController *pageOne;
+@property (nonatomic, retain) PageViewController *pageOne;
+@property (nonatomic, retain) QuestionaireController *questionaireController;
 
 @end
 

@@ -11,7 +11,7 @@
 #import "Question.h"
 #import "Option.h"
 
-@interface PageOneViewController : UITableViewController
+@interface PageViewController : UITableViewController
 
 @property (nonatomic, retain) Page *page;
 

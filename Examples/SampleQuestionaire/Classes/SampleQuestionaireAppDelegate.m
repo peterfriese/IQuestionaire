@@ -7,7 +7,10 @@
 //
 
 #import "SampleQuestionaireAppDelegate.h"
-#import "PageOneViewController.h"
+#import "PageViewController.h"
+#import "QuestionaireController.h"
+
+#import "Questionaire.h"
 #import "Page.h"
 #import "Question.h"
 #import "SingleChoiceQuestion.h"
@@ -18,13 +21,18 @@
 
 @synthesize window;
 @synthesize pageOne;
+@synthesize questionaireController = _questionaireController;
 
 #pragma mark -
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    Questionaire *questionaire = [[Questionaire alloc] init];
+    
     Page *page1 = [[Page alloc] init];
+    page1.title = @"Configure a car";
 	
     SingleChoiceQuestion *question1 = [[SingleChoiceQuestion alloc] init];
     [question1 setKey:@"color"];
@@ -87,12 +95,20 @@
     [optionBoardComputer setTitle:@"Board computer"];
     [question3 setOptions:[NSArray arrayWithObjects:optionCupholder, optionBoardComputer, nil]];
     
-    [page1 setQuestions:[NSArray arrayWithObjects:question1, question2, question3, nil]];    
-	
+    [page1 setQuestions:[NSArray arrayWithObjects:question1, question2, question3, nil]];
+    [questionaire setPages:[NSArray arrayWithObjects:page1, nil]];
+
+	/*
     PageOneViewController *page = [[PageOneViewController alloc] initWithPage:page1];
     [self.window addSubview:page.view];
     [self setPageOne:page];
     [page release];
+     */
+    
+    QuestionaireController *questionaireController = [[QuestionaireController alloc] initWithQuestionaire:questionaire];
+    [self.window addSubview:questionaireController.view];
+    [self setQuestionaireController:questionaireController];
+    [questionaireController release];
 
     [optionCupholder release];
     [optionBoardComputer release];
@@ -110,6 +126,7 @@
 }
 
 - (void)dealloc {
+    [_questionaireController release];
     [window release];
     [super dealloc];
 }
