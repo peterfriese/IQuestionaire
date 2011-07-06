@@ -17,6 +17,10 @@
 		883D46A513A8D5D60095FFB8 /* Option.m in Sources */ = {isa = PBXBuildFile; fileRef = 883D46A313A8D5D60095FFB8 /* Option.m */; };
 		883D46A613A8D5D60095FFB8 /* Option.m in Sources */ = {isa = PBXBuildFile; fileRef = 883D46A313A8D5D60095FFB8 /* Option.m */; };
 		883D46A913A8D7BF0095FFB8 /* OptionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 883D46A813A8D7BF0095FFB8 /* OptionTests.m */; };
+		8866B05C13C50DFF00E9A929 /* QuestionaireController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8866B05A13C50DFF00E9A929 /* QuestionaireController.h */; };
+		8866B05D13C50DFF00E9A929 /* QuestionaireController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8866B05B13C50DFF00E9A929 /* QuestionaireController.m */; };
+		8866B06013C50E0800E9A929 /* PageViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8866B05E13C50E0800E9A929 /* PageViewController.h */; };
+		8866B06113C50E0800E9A929 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8866B05F13C50E0800E9A929 /* PageViewController.m */; };
 		8887E6CC13C32BC8006A51F3 /* DrillDownQuestion.h in Headers */ = {isa = PBXBuildFile; fileRef = 8887E6CA13C32BC8006A51F3 /* DrillDownQuestion.h */; };
 		8887E6CD13C32BC8006A51F3 /* DrillDownQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 8887E6CB13C32BC8006A51F3 /* DrillDownQuestion.m */; };
 		8887E6CE13C32BC8006A51F3 /* DrillDownQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 8887E6CB13C32BC8006A51F3 /* DrillDownQuestion.m */; };
@@ -63,6 +67,10 @@
 		883D46A213A8D5D60095FFB8 /* Option.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Option.h; sourceTree = "<group>"; };
 		883D46A313A8D5D60095FFB8 /* Option.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Option.m; sourceTree = "<group>"; };
 		883D46A813A8D7BF0095FFB8 /* OptionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionTests.m; sourceTree = "<group>"; };
+		8866B05A13C50DFF00E9A929 /* QuestionaireController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestionaireController.h; path = ../Examples/SampleQuestionaire/Classes/QuestionaireController.h; sourceTree = "<group>"; };
+		8866B05B13C50DFF00E9A929 /* QuestionaireController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestionaireController.m; path = ../Examples/SampleQuestionaire/Classes/QuestionaireController.m; sourceTree = "<group>"; };
+		8866B05E13C50E0800E9A929 /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PageViewController.h; path = ../Examples/SampleQuestionaire/Classes/PageViewController.h; sourceTree = "<group>"; };
+		8866B05F13C50E0800E9A929 /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PageViewController.m; path = ../Examples/SampleQuestionaire/Classes/PageViewController.m; sourceTree = "<group>"; };
 		8887E6CA13C32BC8006A51F3 /* DrillDownQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrillDownQuestion.h; sourceTree = "<group>"; };
 		8887E6CB13C32BC8006A51F3 /* DrillDownQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrillDownQuestion.m; sourceTree = "<group>"; };
 		88AC521113C1C8C200221B07 /* PageTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageTests.m; sourceTree = "<group>"; };
@@ -136,6 +144,10 @@
 		88130F2C13A8A34E000CBFBC /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				8866B05A13C50DFF00E9A929 /* QuestionaireController.h */,
+				8866B05B13C50DFF00E9A929 /* QuestionaireController.m */,
+				8866B05E13C50E0800E9A929 /* PageViewController.h */,
+				8866B05F13C50E0800E9A929 /* PageViewController.m */,
 				88B7AA3513A8F74A001EAA21 /* Questionaire.h */,
 				88B7AA3613A8F74A001EAA21 /* Questionaire.m */,
 				88B7AA3013A8F71E001EAA21 /* Page.h */,
@@ -190,6 +202,8 @@
 				88B7AA3713A8F74A001EAA21 /* Questionaire.h in Headers */,
 				88AC521513C1CF7B00221B07 /* SingleChoiceQuestion.h in Headers */,
 				8887E6CC13C32BC8006A51F3 /* DrillDownQuestion.h in Headers */,
+				8866B05C13C50DFF00E9A929 /* QuestionaireController.h in Headers */,
+				8866B06013C50E0800E9A929 /* PageViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +311,8 @@
 				88B7AA3813A8F74A001EAA21 /* Questionaire.m in Sources */,
 				88AC521613C1CF7B00221B07 /* SingleChoiceQuestion.m in Sources */,
 				8887E6CD13C32BC8006A51F3 /* DrillDownQuestion.m in Sources */,
+				8866B05D13C50DFF00E9A929 /* QuestionaireController.m in Sources */,
+				8866B06113C50E0800E9A929 /* PageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

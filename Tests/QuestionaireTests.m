@@ -150,6 +150,34 @@
     STAssertEqualObjects(nextPage, page2, nil);
 }
 
+- (void)testNextQuestion
+{
+    Questionaire *questionaire = [[Questionaire alloc] init];
+    
+    Page *page1 = [[Page alloc] init];
+    Page *page2 = [[Page alloc] init];
+    [questionaire setPages:[NSArray arrayWithObjects:page1, page2, nil]];
+    
+    SingleChoiceQuestion *question1 = [[SingleChoiceQuestion alloc] init];
+    [question1 setKey:@"color"];
+    [question1 setTitle:@"Color"];
+    [question1 setSubtitle:@"Which color do you like?"];
+    [page1 setQuestions:[NSArray arrayWithObjects:question1, nil]];
+    
+    MultipleChoiceQuestion *question2 = [[MultipleChoiceQuestion alloc] init];
+    [question2 setKey:@"aircondition"];
+    [question2 setTitle:@"Air condition"];
+    [question2 setSubtitle:@"Choose the kind of air condition"];
+    
+    MultipleChoiceQuestion *question3 = [[MultipleChoiceQuestion alloc] init];
+    [question3 setKey:@"interior"];
+    [question3 setTitle:@"Interior"];
+    
+    [page2 setQuestions:[NSArray arrayWithObjects:question2, question3, nil]];
+    
+    STAssertEqualObjects([question1 nextQuestion], question2, nil);
+}
+
 
 
 @end

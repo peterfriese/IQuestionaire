@@ -15,6 +15,7 @@
 #import "Question.h"
 #import "SingleChoiceQuestion.h"
 #import "MultipleChoiceQuestion.h"
+#import "DrillDownQuestion.h"
 #import "Option.h"
 
 @implementation SampleQuestionaireAppDelegate
@@ -29,7 +30,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    SingleChoiceQuestion *carType = [[SingleChoiceQuestion alloc] init];
+    DrillDownQuestion *carType = [[DrillDownQuestion alloc] init];
     carType.key = @"carType";
     carType.title = @"Car type";
     carType.subtitle = @"Please choose the type of car you like.";

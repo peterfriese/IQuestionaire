@@ -13,9 +13,15 @@
 #import "MultipleChoiceQuestion.h"
 #import "DrillDownQuestion.h"
 #import "Option.h"
+#import "QuestionaireController.h"
+
+@interface PageViewController () 
+- (QuestionaireController *)questionaireController;
+@end
 
 @implementation PageViewController
 
+@synthesize questionaireController;
 @synthesize page = _page;
 
 -(id)initWithPage:(Page *)page {
@@ -28,6 +34,7 @@
 }
 
 -(void)dealloc {
+    [questionaireController release];
     [_page release];
     [super dealloc];
 }
@@ -155,6 +162,7 @@
         // ask question for next question
         // ask next question for next page
         // navigate to next page
+        [[self questionaireController] navigateToNextPage:question];
     }
 
     // check / uncheck all visible cells

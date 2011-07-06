@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Page.h"
-#import "Question.h"
-#import "Option.h"
+
+@class QuestionaireController;
+@class Page;
+@class Question;
+@class Option;
 
 @interface PageViewController : UITableViewController
 
+@property (nonatomic, retain) QuestionaireController *questionaireController;
 @property (nonatomic, retain) Page *page;
 
 - (id)initWithPage:(Page *)page;

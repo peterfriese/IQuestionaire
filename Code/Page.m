@@ -14,7 +14,7 @@
 @implementation Page
 
 @synthesize title;
-@synthesize questions = _questions;;
+@synthesize questions = _questions;
 @synthesize questionaire;
 
 - (void)setQuestions:(NSArray *)questions
@@ -35,6 +35,12 @@
     if (index < ([self.questions count] - 1))
     {
         return [self.questions objectAtIndex:index + 1];
+    }
+    else {
+        Page *page = [self nextPage];
+        if ( (page != nil) && ([page.questions count] > 0) ){
+            return [page.questions objectAtIndex:0];
+        }
     }
     return nil;
 }

@@ -7,6 +7,7 @@
 //
 
 #import "Question.h"
+#import "Page.h"
 #import "Option.h"
 
 @implementation Question
@@ -18,6 +19,13 @@
 @synthesize nextQuestion;
 @synthesize options;
 
+
+#pragma mark - Navigation
+
+- (Question *)nextQuestion
+{
+    return [self.page nextQuestion:self];
+}
 
 #pragma mark - Option handling
 

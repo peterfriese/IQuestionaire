@@ -42,6 +42,7 @@
         self.currentPageIndex = 0;
         Page *page = [self currentPage];
         PageViewController *pageController = [[PageViewController alloc] initWithPage:page];        
+        pageController.questionaireController = self;
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:pageController];
         [pageController release];
         self.navigationController = navigationController;
@@ -58,9 +59,12 @@
     return nil;
 }
 
-- (void)navigateToNextPage
+- (void)navigateToNextPage:(Question *)question
 {
-
+    Page *nextPage = [self.questionaire pageForQuestion:[question nextQuestion]];
+    PageViewController *pageController = [[PageViewController alloc] initWithPage:nextPage];
+    [self.navigationController pushViewController:pageController animated:YES];
+    [pageController release];
 }
 
 @end

@@ -18,5 +18,6 @@
 @property (nonatomic) NSInteger currentPageIndex;
 
 - (id)initWithQuestionaire:(Questionaire *)questionaire;
+- (void)navigateToNextPage:(Question *)question;
 
 @end

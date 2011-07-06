@@ -17,7 +17,7 @@
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *subtitle;
 @property (nonatomic, retain) Page *page;
-@property (nonatomic, retain) Question *nextQuestion;
+@property (nonatomic, readonly) Question *nextQuestion;
 @property (nonatomic, retain) NSArray *options;
 
 - (NSArray *)checkedOptions;
