@@ -130,6 +130,7 @@
      */
     
     QuestionaireController *questionaireController = [[QuestionaireController alloc] initWithQuestionaire:questionaire];
+    questionaireController.delegate = self;
     [self.window addSubview:questionaireController.view];
     [self setQuestionaireController:questionaireController];
     [questionaireController release];
@@ -155,6 +156,22 @@
     [window release];
     [super dealloc];
 }
+
+- (NSString *)cellIdentifier
+{
+    return @"SampleQuestionaireCell";
+}
+
+- (UITableViewCell *)createCell
+{
+    return [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[self cellIdentifier]] autorelease];
+}
+
+- (void)tableView:(UITableView *)tableView customizeCell:(UITableViewCell *)cell withOption:(Option *)option forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
 
 
 @end

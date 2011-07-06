@@ -16,6 +16,7 @@
 @synthesize questionaire = _questionaire;
 @synthesize currentPage;
 @synthesize currentPageIndex;
+@synthesize delegate;
 
 - (id)initWithQuestionaire:(Questionaire *)questionaire
 {
@@ -61,10 +62,36 @@
 
 - (void)navigateToNextPage:(Question *)question
 {
+    NSLog(@"%@", [self questionaire]);
     Page *nextPage = [self.questionaire pageForQuestion:[question nextQuestion]];
     PageViewController *pageController = [[PageViewController alloc] initWithPage:nextPage];
+    pageController.questionaireController = self;
     [self.navigationController pushViewController:pageController animated:YES];
     [pageController release];
+}
+
+#pragma mark - Table view customization delegation
+
+- (NSString *)cellIdentifier
+{
+    if ([delegate conformsToProtocol:@protocol(QuestionaireControllerDelegate)]) {
+        return [delegate cellIdentifier];
+    }
+    return nil;
+}
+
+- (UITableViewCell *)createCell
+{
+    if ([delegate conformsToProtocol:@protocol(QuestionaireControllerDelegate)]) {
+        return [delegate createCell];
+    }
+    return nil;
+}
+
+- (void)tableView:(UITableView *)tableView customizeCell:(UITableViewCell *)cell withOption:(Option *)option forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([delegate conformsToProtocol:@protocol(QuestionaireControllerDelegate)]) {
+        [delegate tableView:tableView customizeCell:cell withOption:option forRowAtIndexPath:indexPath];
+    }
 }
 
 @end

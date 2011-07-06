@@ -84,4 +84,8 @@
     return YES;
 }
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@"\nQuestionaire:\n\tTitle: %@\n\t", self.title, self.pages];
+}
+
 @end

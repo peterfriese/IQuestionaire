@@ -114,6 +114,44 @@
     return result;
 }
 
+- (NSString *)cellIdentifier
+{
+    NSString *result = [self.questionaireController cellIdentifier];
+    return (result != nil) ? result : @"Cell";
+}
+
+- (UITableViewCell *)createCell
+{
+    return [self.questionaireController createCell];
+}
+
+- (void)tableView:(UITableView *)tableView customizeCell:(UITableViewCell *)cell withOption:(Option *)option forRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.questionaireController tableView:tableView customizeCell:cell withOption:option forRowAtIndexPath:indexPath];
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[self cellIdentifier]];
+    
+    if (cell == nil)
+    {
+        cell = [self createCell];
+        if (cell == nil) {
+            
+        }
+    }
+    
+    Option *option = [self optionForRowAtIndexPath:indexPath];
+    cell.textLabel.text = option.title;
+    cell.accessoryType = [option checked] ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+    
+    [self tableView:self.tableView customizeCell:cell withOption:option forRowAtIndexPath:indexPath];
+    return cell;    
+}
+
+
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -130,6 +168,7 @@
     cell.accessoryType = [option checked] ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
     return cell;
 }
+*/
 
 #pragma mark - Table view delegate
 

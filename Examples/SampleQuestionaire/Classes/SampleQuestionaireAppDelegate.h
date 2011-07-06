@@ -10,7 +10,7 @@
 #import "PageViewController.h"
 #import "QuestionaireController.h"
 
-@interface SampleQuestionaireAppDelegate : NSObject <UIApplicationDelegate> {
+@interface SampleQuestionaireAppDelegate : NSObject <UIApplicationDelegate, QuestionaireControllerDelegate> {
     UIWindow *window;
 }
 
