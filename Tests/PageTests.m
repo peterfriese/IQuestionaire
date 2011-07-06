@@ -20,6 +20,22 @@
 
 @implementation PageTests
 
+- (void)testInverseRelationshipsForQuestions {
+    Page *page1 = [[Page alloc] init];    
+    Question *question1 = [[Question alloc] init];
+    Question *question2 = [[Question alloc] init];
+    Question *question3 = [[Question alloc] init];
+    
+    STAssertNil([question1 page], nil);
+    STAssertNil([question2 page], nil);
+    STAssertNil([question3 page], nil);
+    
+    [page1 setQuestions:[NSArray arrayWithObjects:question1, question2, nil]];
+    STAssertEqualObjects(page1, [question1 page], nil);
+    STAssertEqualObjects(page1, [question2 page], nil);
+    STAssertNil([question3 page], nil);    
+}
+
 - (void)testPageWithOneQuestion {
     Page *page1 = [[Page alloc] init];
     
@@ -93,7 +109,7 @@
     [page setQuestions:[NSArray arrayWithObjects:q, q2, nil]];
     
     Question *nextQ = [page nextQuestion:q];
-    STAssertEquals(q2, nextQ, nil);
+    STAssertEquals(q2, nextQ, nil);    
 }
 
 @end

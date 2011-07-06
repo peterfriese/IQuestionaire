@@ -8,6 +8,9 @@
 
 #import "SingleChoiceQuestion.h"
 
+#import "Page.h"
+#import "Option.h"
+
 @implementation SingleChoiceQuestion
 
 - (BOOL)valid {

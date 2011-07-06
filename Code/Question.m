@@ -7,19 +7,19 @@
 //
 
 #import "Question.h"
+#import "Option.h"
 
 @implementation Question
 
 @synthesize key;
 @synthesize title;
 @synthesize subtitle;
+@synthesize page;
 @synthesize nextQuestion;
 @synthesize options;
 
-- (BOOL)valid 
-{
-    return YES;
-}
+
+#pragma mark - Option handling
 
 - (NSArray *)checkedOptions
 {
@@ -30,6 +30,13 @@
 {
     option.checked = !option.checked;
     return option.checked;
+}
+
+#pragma mark - Validation
+
+- (BOOL)valid 
+{
+    return YES;
 }
 
 @end

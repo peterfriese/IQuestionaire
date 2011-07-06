@@ -7,13 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Option.h"
+
+@class Page;
+@class Option;
 
 @interface Question : NSObject
 
 @property (nonatomic, retain) NSString *key;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *subtitle;
+@property (nonatomic, retain) Page *page;
 @property (nonatomic, retain) Question *nextQuestion;
 @property (nonatomic, retain) NSArray *options;
 

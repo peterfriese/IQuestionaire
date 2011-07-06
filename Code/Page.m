@@ -8,25 +8,48 @@
 
 #import "Page.h"
 
+#import "Questionaire.h"
+#import "Question.h"
+
 @implementation Page
 
 @synthesize title;
-@synthesize questions;
+@synthesize questions = _questions;;
+@synthesize questionaire;
 
-- (BOOL)valid 
+- (void)setQuestions:(NSArray *)questions
 {
-    NSArray *inValidQuestions = [questions filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"valid == NO"]];
-    return ([inValidQuestions count] == 0);
+    [questions retain];
+    [_questions release];
+    _questions = questions;
+    for (Question *q in _questions) {
+        q.page = self;
+    }
 }
+
+#pragma mark - Navigation
 
 - (Question *)nextQuestion:(Question *)question
 {
-    NSUInteger index = [questions indexOfObject:question];
-    if (index < ([questions count] - 1))
+    NSUInteger index = [self.questions indexOfObject:question];
+    if (index < ([self.questions count] - 1))
     {
-        return [questions objectAtIndex:index + 1];
+        return [self.questions objectAtIndex:index + 1];
     }
     return nil;
+}
+
+- (Page *)nextPage
+{
+    return [questionaire nextPage:self];
+}
+
+#pragma mark - Validation
+
+- (BOOL)valid
+{
+    NSArray *inValidQuestions = [self.questions filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"valid == NO"]];
+    return ([inValidQuestions count] == 0);
 }
 
 @end

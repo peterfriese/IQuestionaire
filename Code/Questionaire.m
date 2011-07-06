@@ -12,8 +12,10 @@
 
 @implementation Questionaire
 
-@synthesize title;
-@synthesize pages;
+@synthesize title = _title;
+@synthesize pages = _pages;
+
+#pragma mark - Memory management
 
 - (id)init 
 {
@@ -25,23 +27,33 @@
     return self;
 }
 
-- (BOOL)valid 
+- (void)dealloc
 {
-    for (Page *page in pages) {
-        if (![page valid]) {
-            return NO;
-        }
+    [_pages release];
+    [_title release];
+    [super dealloc];
+    
+}
+
+#pragma mark - Page handling
+
+- (void)setPages:(NSArray *)pages
+{
+    [pages retain];
+    [_pages release];
+    _pages = pages;
+    for (Page *p in _pages) {
+        p.questionaire = self;
     }
-    return true;
 }
 
 - (Page *)nextPage:(Page *)currentPage
 {
-    for (int i = 0; i < [pages count]; i++) {
-        Page *page = [pages objectAtIndex:i];
+    for (int i = 0; i < [self.pages count]; i++) {
+        Page *page = [self.pages objectAtIndex:i];
         if ([page isEqual:currentPage]) {
-            if (i < [pages count] - 1) {
-                return [pages objectAtIndex:i+1];
+            if (i < [self.pages count] - 1) {
+                return [self.pages objectAtIndex:i+1];
             }
         }
     }
@@ -50,7 +62,7 @@
 
 - (Page *)pageForQuestion:(Question *)currentQuestion
 {
-    for (Page *page in pages) {
+    for (Page *page in self.pages) {
         for (Question *question in page.questions) {
             if ([question isEqual:currentQuestion]) {
                 return page;
@@ -58,6 +70,18 @@
         }
     }
     return nil;
+}
+
+#pragma mark - Validation
+
+- (BOOL)valid 
+{
+    for (Page *page in self.pages) {
+        if (![page valid]) {
+            return NO;
+        }
+    }
+    return YES;
 }
 
 @end

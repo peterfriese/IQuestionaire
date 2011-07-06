@@ -21,6 +21,26 @@
 
 @implementation QuestionaireTests
 
+- (void)testInverseRelationshipForPages {
+    Questionaire *questionaire = [[Questionaire alloc] init];
+    
+    Page *page1 = [[Page alloc] init];
+    Page *page2 = [[Page alloc] init];
+    
+    STAssertNil(page1.questionaire, nil);
+    STAssertNil(page2.questionaire, nil);
+    [questionaire setPages:[NSArray arrayWithObjects:page1, page2, nil]];
+    STAssertEquals(questionaire, page1.questionaire, nil);
+    STAssertEquals(questionaire, page2.questionaire, nil);
+}
+
+- (void)testSettingEmptyPages {
+    Questionaire *questionaire = [[Questionaire alloc] init];
+    [questionaire setPages:[NSArray array]];
+    STAssertTrue([questionaire valid], nil);
+    
+}
+
 - (void)testFullQuestionaire {
     Questionaire *questionaire = [[Questionaire alloc] init];
 
@@ -125,6 +145,9 @@
     
     STAssertEquals(page2, [questionaire nextPage:page1], nil);
     STAssertNil([questionaire nextPage:page2], nil);
+    
+    Page *nextPage = [page1 nextPage];
+    STAssertEqualObjects(nextPage, page2, nil);
 }
 
 
