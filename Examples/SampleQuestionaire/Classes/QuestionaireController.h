@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "Questionaire.h"
+#import "Page.h"
 
 @interface QuestionaireController : UIViewController
 
 @property (nonatomic, retain) UINavigationController *navigationController;
 @property (nonatomic, retain) Questionaire *questionaire;
+@property (nonatomic, readonly) Page *currentPage;
+@property (nonatomic) NSInteger currentPageIndex;
 
 - (id)initWithQuestionaire:(Questionaire *)questionaire;
 

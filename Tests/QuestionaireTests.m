@@ -68,7 +68,65 @@
     STAssertFalse([questionaire valid], nil);
     [optionBlue setChecked:YES];
     STAssertTrue([questionaire valid], nil);
-
 }
+
+- (void)testPageForQuestion {
+    Questionaire *questionaire = [[Questionaire alloc] init];
+    
+    Page *page1 = [[Page alloc] init];
+    Page *page2 = [[Page alloc] init];
+    [questionaire setPages:[NSArray arrayWithObjects:page1, page2, nil]];
+    
+    SingleChoiceQuestion *question1 = [[SingleChoiceQuestion alloc] init];
+    [question1 setKey:@"color"];
+    [question1 setTitle:@"Color"];
+    [question1 setSubtitle:@"Which color do you like?"];
+    [page1 setQuestions:[NSArray arrayWithObjects:question1, nil]];
+    
+    MultipleChoiceQuestion *question2 = [[MultipleChoiceQuestion alloc] init];
+    [question2 setKey:@"aircondition"];
+    [question2 setTitle:@"Air condition"];
+    [question2 setSubtitle:@"Choose the kind of air condition"];
+    
+    MultipleChoiceQuestion *question3 = [[MultipleChoiceQuestion alloc] init];
+    [question3 setKey:@"interior"];
+    [question3 setTitle:@"Interior"];
+    
+    [page2 setQuestions:[NSArray arrayWithObjects:question2, question3, nil]];
+    
+    STAssertEquals(page1, [questionaire pageForQuestion:question1], nil);
+    STAssertEquals(page2, [questionaire pageForQuestion:question2], nil);
+    STAssertEquals(page2, [questionaire pageForQuestion:question3], nil);
+}
+
+- (void)testNextPage {
+    Questionaire *questionaire = [[Questionaire alloc] init];
+    
+    Page *page1 = [[Page alloc] init];
+    Page *page2 = [[Page alloc] init];
+    [questionaire setPages:[NSArray arrayWithObjects:page1, page2, nil]];
+    
+    SingleChoiceQuestion *question1 = [[SingleChoiceQuestion alloc] init];
+    [question1 setKey:@"color"];
+    [question1 setTitle:@"Color"];
+    [question1 setSubtitle:@"Which color do you like?"];
+    [page1 setQuestions:[NSArray arrayWithObjects:question1, nil]];
+    
+    MultipleChoiceQuestion *question2 = [[MultipleChoiceQuestion alloc] init];
+    [question2 setKey:@"aircondition"];
+    [question2 setTitle:@"Air condition"];
+    [question2 setSubtitle:@"Choose the kind of air condition"];
+    
+    MultipleChoiceQuestion *question3 = [[MultipleChoiceQuestion alloc] init];
+    [question3 setKey:@"interior"];
+    [question3 setTitle:@"Interior"];
+    
+    [page2 setQuestions:[NSArray arrayWithObjects:question2, question3, nil]];
+    
+    STAssertEquals(page2, [questionaire nextPage:page1], nil);
+    STAssertNil([questionaire nextPage:page2], nil);
+}
+
+
 
 @end

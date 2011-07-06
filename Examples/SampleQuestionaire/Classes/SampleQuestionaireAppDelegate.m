@@ -29,10 +29,31 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    Questionaire *questionaire = [[Questionaire alloc] init];
+    SingleChoiceQuestion *carType = [[SingleChoiceQuestion alloc] init];
+    carType.key = @"carType";
+    carType.title = @"Car type";
+    carType.subtitle = @"Please choose the type of car you like.";
     
+    Option *optionConvertible = [[Option alloc] init];
+    optionConvertible.title = @"Convertible";
+    optionConvertible.key = @"convertible";
+    Option *optionSedan = [[Option alloc] init];
+    optionSedan.title = @"Sedan";
+    optionSedan.key = @"sedan";
+    Option *optionMinivan = [[Option alloc] init];
+    optionMinivan.title = @"Minivan";
+    optionMinivan.key = @"minivan";
+    carType.options = [NSArray arrayWithObjects:optionSedan, optionMinivan, optionConvertible, nil];
+    [optionSedan release];
+    [optionMinivan release];
+    [optionConvertible release];
+
     Page *page1 = [[Page alloc] init];
-    page1.title = @"Configure a car";
+    page1.title = @"Choose the type of car";
+    page1.questions = [NSArray arrayWithObjects:carType, nil];
+    
+    Page *page2 = [[Page alloc] init];
+    page2.title = @"Configure a car";
 	
     SingleChoiceQuestion *question1 = [[SingleChoiceQuestion alloc] init];
     [question1 setKey:@"color"];
@@ -95,8 +116,10 @@
     [optionBoardComputer setTitle:@"Board computer"];
     [question3 setOptions:[NSArray arrayWithObjects:optionCupholder, optionBoardComputer, nil]];
     
-    [page1 setQuestions:[NSArray arrayWithObjects:question1, question2, question3, nil]];
-    [questionaire setPages:[NSArray arrayWithObjects:page1, nil]];
+    [page2 setQuestions:[NSArray arrayWithObjects:question1, question2, question3, nil]];
+    
+    Questionaire *questionaire = [[Questionaire alloc] init];
+    [questionaire setPages:[NSArray arrayWithObjects:page1, page2, nil]];
 
 	/*
     PageOneViewController *page = [[PageOneViewController alloc] initWithPage:page1];
@@ -119,6 +142,7 @@
     [question1 release];
     [optionRed release];
     [optionBlue release];
+    [page2 release];
     [page1 release];
 	
     [self.window makeKeyAndVisible];

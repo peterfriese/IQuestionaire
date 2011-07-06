@@ -8,18 +8,21 @@
 
 #import "QuestionaireController.h"
 #import "Page.h"
-#import "PageOneViewController.h"
+#import "PageViewController.h"
 
 @implementation QuestionaireController
 
 @synthesize navigationController = _navigationController;
 @synthesize questionaire = _questionaire;
+@synthesize currentPage;
+@synthesize currentPageIndex;
 
 - (id)initWithQuestionaire:(Questionaire *)questionaire
 {
     self = [super init];
     if (self) {
         self.questionaire = questionaire;
+        self.currentPageIndex = -1;
     }
     return self;
 }
@@ -30,50 +33,34 @@
     [super dealloc];
 }
 
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
 #pragma mark - View lifecycle
 
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView
 {
     if ([self.questionaire.pages count] > 0) {
-        Page *page = [self.questionaire.pages objectAtIndex:0];
-        PageOneViewController *pageController = [[PageOneViewController alloc] initWithPage:page];        
+        self.currentPageIndex = 0;
+        Page *page = [self currentPage];
+        PageViewController *pageController = [[PageViewController alloc] initWithPage:page];        
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:pageController];
+        [pageController release];
         self.navigationController = navigationController;
         self.view = navigationController.view;
         [navigationController release];        
     }
 }
 
-
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
+- (Page *)currentPage
 {
-    [super viewDidLoad];
-}
-*/
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    if ( (currentPageIndex >= 0) && (currentPageIndex < [self.questionaire.pages count]) ) {
+        return [self.questionaire.pages objectAtIndex:currentPageIndex];
+    }
+    return nil;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+- (void)navigateToNextPage
 {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+
 }
 
 @end

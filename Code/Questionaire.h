@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Page.h"
+#import "Question.h"
 
 @interface Questionaire : NSObject
 
@@ -14,5 +16,7 @@
 @property (nonatomic, retain) NSArray *pages;
 
 - (BOOL)valid;
+- (Page *)nextPage:(Page *)currentPage;
+- (Page *)pageForQuestion:(Question *)currentQuestion;
 
 @end

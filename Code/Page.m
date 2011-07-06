@@ -21,7 +21,6 @@
 
 - (Question *)nextQuestion:(Question *)question
 {
-    NSLog(@"Number of qs: %d", [questions count]);
     NSUInteger index = [questions indexOfObject:question];
     if (index < ([questions count] - 1))
     {
