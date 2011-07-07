@@ -6,9 +6,9 @@
 //  Copyright 2011 Peter Friese. All rights reserved.
 //
 
-#import "Option.h"
+#import "IQOption.h"
 
-@implementation Option
+@implementation IQOption
 
 @synthesize key;
 @synthesize title;

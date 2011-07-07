@@ -14,7 +14,7 @@
 #import "Question.h"
 #import "SingleChoiceQuestion.h"
 #import "MultipleChoiceQuestion.h"
-#import "Option.h"
+#import "IQOption.h"
 
 @interface QuestionaireTests : SenTestCase
 @end
@@ -52,10 +52,10 @@
     [question1 setKey:@"color"];
     [question1 setTitle:@"Color"];
     [question1 setSubtitle:@"Which color do you like?"];
-    Option *optionRed = [[Option alloc] init];
+    IQOption *optionRed = [[IQOption alloc] init];
     [optionRed setKey:@"red"];
     [optionRed setData:@"Red"];
-    Option *optionBlue = [[Option alloc] init];
+    IQOption *optionBlue = [[IQOption alloc] init];
     [optionBlue setKey:@"blue"];
     [optionBlue setData:@"Blue"];
     [question1 setOptions:[NSArray arrayWithObjects:optionBlue, optionRed, nil]];
@@ -65,20 +65,20 @@
     [question2 setKey:@"aircondition"];
     [question2 setTitle:@"Air condition"];
     [question2 setSubtitle:@"Choose the kind of air condition"];
-    Option *optionNoAirCondition = [[Option alloc] init];
+    IQOption *optionNoAirCondition = [[IQOption alloc] init];
     [optionNoAirCondition setKey:@"noairco"];
     [optionNoAirCondition setData:@"None"];
-    Option *optionAutomaticAirCondition = [[Option alloc] init];
+    IQOption *optionAutomaticAirCondition = [[IQOption alloc] init];
     [optionAutomaticAirCondition setKey:@"automaticairco"];
     [question2 setOptions:[NSArray arrayWithObjects:optionNoAirCondition, optionAutomaticAirCondition, nil]];
     
     MultipleChoiceQuestion *question3 = [[MultipleChoiceQuestion alloc] init];
     [question3 setKey:@"interior"];
     [question3 setTitle:@"Interior"];
-    Option *optionCupholder = [[Option alloc] init];
+    IQOption *optionCupholder = [[IQOption alloc] init];
     [optionCupholder setKey:@"cupholder"];
     [optionCupholder setData:@"Cupholder"];
-    Option *optionBoardComputer = [[Option alloc] init];
+    IQOption *optionBoardComputer = [[IQOption alloc] init];
     [optionBoardComputer setKey:@"boardcomputer"];
     [optionBoardComputer setData:@"Board computer"];
     [question3 setOptions:[NSArray arrayWithObjects:optionCupholder, optionBoardComputer, nil]];

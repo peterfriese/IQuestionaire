@@ -10,11 +10,12 @@
 #import "Questionaire.h"
 #import "Page.h"
 
-@protocol QuestionaireControllerDelegate <NSObject>
-- (NSString *)cellIdentifier;
-- (UITableViewCell *)createCell;
-- (void)tableView:(UITableView *)tableView customizeCell:(UITableViewCell *)cell withOption:(Option *)option forRowAtIndexPath:(NSIndexPath *)indexPath;
+@class QuestionaireController;
 
+@protocol QuestionaireControllerDelegate <NSObject>
+- (NSString *)questionaire:(QuestionaireController *)questionaireController cellIdentifierForTableView:(UITableView *)tableView;
+- (UITableViewCell *)questionaire:(QuestionaireController *)questionaireController createCellForTableView:(UITableView *)tableView;
+- (void)questionaire:(QuestionaireController *)questionaireController tableView:(UITableView *)tableView customizeCell:(UITableViewCell *)cell withOption:(IQOption *)option forRowAtIndexPath:(NSIndexPath *)indexPath;
 @end
 
 @interface QuestionaireController : UIViewController
@@ -30,6 +31,6 @@
 
 - (NSString *)cellIdentifier;
 - (UITableViewCell *)createCell;
-- (void)tableView:(UITableView *)tableView customizeCell:(UITableViewCell *)cell withOption:(Option *)option forRowAtIndexPath:(NSIndexPath *)indexPath;
+- (void)tableView:(UITableView *)tableView customizeCell:(UITableViewCell *)cell withOption:(IQOption *)option forRowAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

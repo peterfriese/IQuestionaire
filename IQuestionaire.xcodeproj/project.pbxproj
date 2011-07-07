@@ -13,9 +13,9 @@
 		883D469113A8D51E0095FFB8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88130F2213A8A32E000CBFBC /* Foundation.framework */; };
 		883D469313A8D51E0095FFB8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 883D469213A8D51E0095FFB8 /* CoreGraphics.framework */; };
 		883D469913A8D51E0095FFB8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 883D469713A8D51E0095FFB8 /* InfoPlist.strings */; };
-		883D46A413A8D5D60095FFB8 /* Option.h in Headers */ = {isa = PBXBuildFile; fileRef = 883D46A213A8D5D60095FFB8 /* Option.h */; };
-		883D46A513A8D5D60095FFB8 /* Option.m in Sources */ = {isa = PBXBuildFile; fileRef = 883D46A313A8D5D60095FFB8 /* Option.m */; };
-		883D46A613A8D5D60095FFB8 /* Option.m in Sources */ = {isa = PBXBuildFile; fileRef = 883D46A313A8D5D60095FFB8 /* Option.m */; };
+		883D46A413A8D5D60095FFB8 /* IQOption.h in Headers */ = {isa = PBXBuildFile; fileRef = 883D46A213A8D5D60095FFB8 /* IQOption.h */; };
+		883D46A513A8D5D60095FFB8 /* IQOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 883D46A313A8D5D60095FFB8 /* IQOption.m */; };
+		883D46A613A8D5D60095FFB8 /* IQOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 883D46A313A8D5D60095FFB8 /* IQOption.m */; };
 		883D46A913A8D7BF0095FFB8 /* OptionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 883D46A813A8D7BF0095FFB8 /* OptionTests.m */; };
 		8866B07A13C524B700E9A929 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8866B07613C524B600E9A929 /* PageViewController.m */; };
 		8866B07B13C524B700E9A929 /* PageViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8866B07713C524B600E9A929 /* PageViewController.h */; };
@@ -64,8 +64,8 @@
 		883D469613A8D51E0095FFB8 /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		883D469813A8D51E0095FFB8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		883D469E13A8D51E0095FFB8 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		883D46A213A8D5D60095FFB8 /* Option.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Option.h; sourceTree = "<group>"; };
-		883D46A313A8D5D60095FFB8 /* Option.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Option.m; sourceTree = "<group>"; };
+		883D46A213A8D5D60095FFB8 /* IQOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQOption.h; sourceTree = "<group>"; };
+		883D46A313A8D5D60095FFB8 /* IQOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQOption.m; sourceTree = "<group>"; };
 		883D46A813A8D7BF0095FFB8 /* OptionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionTests.m; sourceTree = "<group>"; };
 		8866B07613C524B600E9A929 /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		8866B07713C524B600E9A929 /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
@@ -160,8 +160,8 @@
 				88B7AA2C13A8E430001EAA21 /* MultipleChoiceQuestion.m */,
 				8887E6CA13C32BC8006A51F3 /* DrillDownQuestion.h */,
 				8887E6CB13C32BC8006A51F3 /* DrillDownQuestion.m */,
-				883D46A213A8D5D60095FFB8 /* Option.h */,
-				883D46A313A8D5D60095FFB8 /* Option.m */,
+				883D46A213A8D5D60095FFB8 /* IQOption.h */,
+				883D46A313A8D5D60095FFB8 /* IQOption.m */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -195,7 +195,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				883D46A413A8D5D60095FFB8 /* Option.h in Headers */,
+				883D46A413A8D5D60095FFB8 /* IQOption.h in Headers */,
 				88B7AA2013A8DE9D001EAA21 /* Question.h in Headers */,
 				88B7AA2D13A8E430001EAA21 /* MultipleChoiceQuestion.h in Headers */,
 				88B7AA3213A8F71E001EAA21 /* Page.h in Headers */,
@@ -304,7 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				883D46A513A8D5D60095FFB8 /* Option.m in Sources */,
+				883D46A513A8D5D60095FFB8 /* IQOption.m in Sources */,
 				88B7AA2113A8DE9D001EAA21 /* Question.m in Sources */,
 				88B7AA2E13A8E430001EAA21 /* MultipleChoiceQuestion.m in Sources */,
 				88B7AA3313A8F71E001EAA21 /* Page.m in Sources */,
@@ -320,7 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				883D46A613A8D5D60095FFB8 /* Option.m in Sources */,
+				883D46A613A8D5D60095FFB8 /* IQOption.m in Sources */,
 				883D46A913A8D7BF0095FFB8 /* OptionTests.m in Sources */,
 				88B7AA2213A8DE9D001EAA21 /* Question.m in Sources */,
 				88B7AA2513A8DFE5001EAA21 /* QuestionTests.m in Sources */,
@@ -403,7 +403,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/IQuestionaire.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -415,7 +415,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/IQuestionaire.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

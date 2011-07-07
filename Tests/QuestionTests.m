@@ -9,7 +9,7 @@
 #import <SenTestingKit/SenTestingKit.h>
 #import <UIKit/UIKit.h>
 
-#import "Option.h"
+#import "IQOption.h"
 #import "Question.h"
 #import "SingleChoiceQuestion.h"
 #import "MultipleChoiceQuestion.h"
@@ -36,10 +36,10 @@
     SingleChoiceQuestion *q = [[SingleChoiceQuestion alloc] init];
     [q setKey:@"singlechoice"];
     [q setTitle:@"Choose either one"];
-    Option *o1 = [[Option alloc] init];
+    IQOption *o1 = [[IQOption alloc] init];
     [o1 setKey:@"one"];
     [o1 setTitle:@"One"];
-    Option *o2 = [[Option alloc] init];
+    IQOption *o2 = [[IQOption alloc] init];
     [o2 setKey:@"two"];
     [o2 setTitle:@"Two"];
     [q setOptions:[NSArray arrayWithObjects:o1, o2, nil]];
@@ -62,9 +62,9 @@
 - (void)testMultipleChoiceQuestion {
     MultipleChoiceQuestion *q = [[MultipleChoiceQuestion alloc] init];
     
-    Option *o1 = [[Option alloc] init];
+    IQOption *o1 = [[IQOption alloc] init];
     [o1 setChecked:NO];
-    Option *o2 = [[Option alloc] init];
+    IQOption *o2 = [[IQOption alloc] init];
     [o2 setChecked:NO];
     [q setOptions:[NSArray arrayWithObjects:o1, o2, nil]];
     STAssertEquals((NSUInteger) 2, [[q options] count], nil);
@@ -85,10 +85,10 @@
 
 - (void)testToggleOptionOnSimpleQuestion {
     Question *q = [[Question alloc] init];
-    Option *o1 = [[Option alloc] init];
+    IQOption *o1 = [[IQOption alloc] init];
     [o1 setKey:@"option1"];
     [o1 setChecked:NO];
-    Option *o2 = [[Option alloc] init];
+    IQOption *o2 = [[IQOption alloc] init];
     [o2 setKey:@"option2"];
     [o2 setChecked:NO];
     [q setOptions:[NSArray arrayWithObjects:o1, o2, nil]];
@@ -111,13 +111,13 @@
 
 - (void)testToggleOptionOnSingleChoiceQuestion {
     SingleChoiceQuestion *q = [[SingleChoiceQuestion alloc] init];
-    Option *o1 = [[Option alloc] init];
+    IQOption *o1 = [[IQOption alloc] init];
     [o1 setKey:@"option1"];
     [o1 setChecked:NO];
-    Option *o2 = [[Option alloc] init];
+    IQOption *o2 = [[IQOption alloc] init];
     [o2 setKey:@"option2"];
     [o2 setChecked:NO];
-    Option *o3 = [[Option alloc] init];
+    IQOption *o3 = [[IQOption alloc] init];
     [o3 setKey:@"option3"];
     [o3 setChecked:NO];
     [q setOptions:[NSArray arrayWithObjects:o1, o2, o3, nil]];    

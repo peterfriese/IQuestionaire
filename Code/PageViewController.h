@@ -11,7 +11,7 @@
 @class QuestionaireController;
 @class Page;
 @class Question;
-@class Option;
+@class IQOption;
 
 @interface PageViewController : UITableViewController
 
@@ -21,6 +21,6 @@
 - (id)initWithPage:(Page *)page;
 - (Question *)questionForSection:(NSUInteger)section;
 - (Question *)questionForRowAtIndexPath:(NSIndexPath *)indexPath;
-- (Option *)optionForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (IQOption *)optionForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

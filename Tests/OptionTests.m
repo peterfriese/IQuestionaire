@@ -9,7 +9,7 @@
 #import <SenTestingKit/SenTestingKit.h>
 #import <UIKit/UIKit.h>
 
-#import "Option.h"
+#import "IQOption.h"
 
 @interface OptionTests : SenTestCase
 {
@@ -19,7 +19,7 @@
 @implementation OptionTests
 
 - (void)testSimpleOption {
-    Option *option = [[Option alloc] init];
+    IQOption *option = [[IQOption alloc] init];
     [option setKey:@"fortytwo"];
     [option setData:@"just a string this time"];
     [option setChecked:NO];

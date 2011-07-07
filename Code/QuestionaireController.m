@@ -72,10 +72,10 @@
 
 #pragma mark - Table view customization delegation
 
-- (NSString *)cellIdentifier
+- (NSString *)cellIdentifier;
 {
     if ([delegate conformsToProtocol:@protocol(QuestionaireControllerDelegate)]) {
-        return [delegate cellIdentifier];
+        return [delegate questionaire:self cellIdentifierForTableView:nil];
     }
     return nil;
 }
@@ -83,14 +83,14 @@
 - (UITableViewCell *)createCell
 {
     if ([delegate conformsToProtocol:@protocol(QuestionaireControllerDelegate)]) {
-        return [delegate createCell];
+        return [delegate questionaire:self createCellForTableView:nil];
     }
     return nil;
 }
 
-- (void)tableView:(UITableView *)tableView customizeCell:(UITableViewCell *)cell withOption:(Option *)option forRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView customizeCell:(UITableViewCell *)cell withOption:(IQOption *)option forRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([delegate conformsToProtocol:@protocol(QuestionaireControllerDelegate)]) {
-        [delegate tableView:tableView customizeCell:cell withOption:option forRowAtIndexPath:indexPath];
+        [delegate questionaire:self tableView:tableView customizeCell:cell withOption:option forRowAtIndexPath:indexPath];
     }
 }
 

@@ -8,7 +8,7 @@
 
 #import "Question.h"
 #import "Page.h"
-#import "Option.h"
+#import "IQOption.h"
 
 @implementation Question
 
@@ -34,7 +34,7 @@
     return [self.options filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"checked == YES"]];
 }
 
-- (BOOL)toggleOption:(Option *)option
+- (BOOL)toggleOption:(IQOption *)option
 {
     option.checked = !option.checked;
     return option.checked;

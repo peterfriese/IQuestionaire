@@ -9,7 +9,7 @@
 #import "SingleChoiceQuestion.h"
 
 #import "Page.h"
-#import "Option.h"
+#import "IQOption.h"
 
 @implementation SingleChoiceQuestion
 
@@ -18,9 +18,9 @@
     return [checkedOptions count] == 1;
 }
 
-- (BOOL)toggleOption:(Option *)option
+- (BOOL)toggleOption:(IQOption *)option
 {
-    for (Option *o in self.options) {
+    for (IQOption *o in self.options) {
         if( (o != option) && (option.checked == NO) ) {
             o.checked = option.checked;
         }

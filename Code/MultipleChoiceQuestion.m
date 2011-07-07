@@ -7,7 +7,7 @@
 //
 
 #import "MultipleChoiceQuestion.h"
-#import "Option.h"
+#import "IQOption.h"
 
 @implementation MultipleChoiceQuestion
 
@@ -29,7 +29,7 @@
     return (self.minimumSelectionCount <= numSelected) && (numSelected <= self.maximumSelectionCount);
 }
 
-- (BOOL)toggleOption:(Option *)option
+- (BOOL)toggleOption:(IQOption *)option
 {
     NSUInteger count = [[self checkedOptions] count];
     count += option.checked ? 1 : -1;

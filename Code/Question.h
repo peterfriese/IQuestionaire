@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class Page;
-@class Option;
+@class IQOption;
 
 @interface Question : NSObject
 
@@ -22,6 +22,6 @@
 
 - (NSArray *)checkedOptions;
 - (BOOL)valid;
-- (BOOL)toggleOption:(Option *)option;
+- (BOOL)toggleOption:(IQOption *)option;
 
 @end

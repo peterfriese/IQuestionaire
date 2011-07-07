@@ -12,7 +12,7 @@
 #import "SingleChoiceQuestion.h"
 #import "MultipleChoiceQuestion.h"
 #import "DrillDownQuestion.h"
-#import "Option.h"
+#import "IQOption.h"
 #import "QuestionaireController.h"
 
 @interface PageViewController () 
@@ -125,7 +125,7 @@
     return [self.questionaireController createCell];
 }
 
-- (void)tableView:(UITableView *)tableView customizeCell:(UITableViewCell *)cell withOption:(Option *)option forRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView customizeCell:(UITableViewCell *)cell withOption:(IQOption *)option forRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.questionaireController tableView:tableView customizeCell:cell withOption:option forRowAtIndexPath:indexPath];
 }
 
@@ -142,7 +142,7 @@
         }
     }
     
-    Option *option = [self optionForRowAtIndexPath:indexPath];
+    IQOption *option = [self optionForRowAtIndexPath:indexPath];
     cell.textLabel.text = option.title;
     cell.accessoryType = [option checked] ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
     
@@ -185,7 +185,7 @@
     // DrillDownQuestion:
     //  Check the model element and navigate to the next page
     Question *question = [self questionForRowAtIndexPath:indexPath];
-    Option *option = [self optionForRowAtIndexPath:indexPath];    
+    IQOption *option = [self optionForRowAtIndexPath:indexPath];    
     if ([question isKindOfClass:[SingleChoiceQuestion class]]) {
         // ask question to change checked state of option
         [question toggleOption:option];
@@ -207,7 +207,7 @@
     // check / uncheck all visible cells
     for (UITableViewCell *cell in [tableView visibleCells]) {
         NSIndexPath *path = [tableView indexPathForCell:cell];
-        Option *option = [self optionForRowAtIndexPath:path];
+        IQOption *option = [self optionForRowAtIndexPath:path];
         cell.accessoryType = [option checked] ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;        
     }
 }
@@ -224,7 +224,7 @@
     return [self.page.questions objectAtIndex:[indexPath section]];
 }
 
-- (Option *)optionForRowAtIndexPath:(NSIndexPath *)indexPath
+- (IQOption *)optionForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return [[[self questionForRowAtIndexPath:indexPath] options] objectAtIndex:[indexPath row]];
 }

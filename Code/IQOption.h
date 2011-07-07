@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Option : NSObject
+@interface IQOption : NSObject
 
 @property (nonatomic, retain) NSString *key;
 @property (nonatomic, retain) NSString *title;
